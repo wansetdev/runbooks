@@ -2,21 +2,35 @@
 
 Step-by-step runbooks for common web hosting failures. I'm building a Linux lab server, breaking it on purpose, and documenting how to diagnose and fix each problem.
 
-**Status:** just started. Runbooks will be added as I complete them.
+**Status:** 1 runbook published, 15 planned. I add a new one each time I finish a lab.
+
+## How to use a runbook
+
+1. Find the runbook that matches what the customer sees (its **Symptom**).
+2. Run the **Quick check** to confirm it is this problem.
+3. Follow **Diagnosis** step by step, comparing your output with *Healthy* and *Broken*.
+4. Apply the **Fix**, then prove it with **Verify**.
+
+Paths use `example.com` as the site name, for example `/var/www/example.com/public`. Replace it with the real site.
 
 ## Runbook format
 
-Every runbook follows the same five steps:
+Every runbook has the same sections:
 
-1. **Symptom**: what the customer or monitoring sees
-2. **Diagnosis**: the commands I ran, in order, and what each one told me
-3. **Fix**: the exact change that resolved it
-4. **Verify**: how I confirmed it was really fixed
-5. **Prevention**: what stops it from happening again
+| Section | What it answers |
+| --- | --- |
+| Symptom | What does the customer see? |
+| Quick check | Which command confirms it in under a minute? |
+| Diagnosis | Which commands find the cause, and what do healthy and broken results look like? |
+| Fix | What fixes it, why, and which tempting fixes to avoid? |
+| Verify | How do I prove it is fixed, on the server and as the customer? |
+| Prevention | What stops it from happening again? |
+| Escalate when | What would tell me it is a different problem for someone else? |
+| Diagnosis log | When I met it, and how long it took me to find the cause |
 
 New runbooks start from [TEMPLATE.md](TEMPLATE.md).
 
-## Planned runbooks
+## Runbooks
 
 | # | Runbook | Area | Status |
 | --- | --- | --- | --- |
@@ -34,5 +48,5 @@ New runbooks start from [TEMPLATE.md](TEMPLATE.md).
 | 12 | Redirect loop between HTTP and HTTPS | Web server / TLS | Planned |
 | 13 | High CPU load | Linux | Planned |
 | 14 | Mixed content warnings after enabling SSL | TLS / Application | Planned |
-| 15 | Cannot SSH into the server | Linux / Networking | Planned |→
-
+| 15 | Cannot SSH into the server | Linux / Networking | Planned |
+| 16 | [WordPress: "Could not create directory"](linux/wordpress-could-not-create-directory.md) | WordPress / Linux permissions | Done |

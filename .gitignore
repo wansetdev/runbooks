@@ -1,0 +1,13 @@
+# Secrets: never commit these
+.env
+*.pem
+*.key
+id_rsa*
+id_ed25519*
+
+# Database dumps can hold customer data
+*.sql
+*.sql.gz
+
+# macOS junk
+.DS_Store
